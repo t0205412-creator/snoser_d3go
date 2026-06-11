@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TGReporter Beta</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a0a0a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#e5e5e5;line-height:1.5;}
+.container{max-width:880px;margin:0 auto;padding:48px 24px;}
+h1{font-size:28px;font-weight:600;letter-spacing:-0.5px;}
+h2{font-size:18px;font-weight:500;color:#888;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;}
+h3{font-size:16px;font-weight:500;margin-bottom:12px;}
+.badge{display:inline-block;background:#1a1a1a;padding:4px 12px;border-radius:20px;font-size:12px;color:#00ff88;border:0.5px solid #2a2a2a;}
+.card{background:#111;border:0.5px solid #222;border-radius:20px;padding:24px;margin-bottom:20px;}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
+.stat-item{background:#111;border:0.5px solid #222;border-radius:16px;padding:16px;text-align:center;}
+.stat-value{font-size:28px;font-weight:600;color:#00ff88;margin-bottom:4px;}
+.stat-label{font-size:12px;color:#666;}
+.btn{display:inline-flex;align-items:center;gap:8px;background:#1a1a1a;border:0.5px solid #333;padding:10px 20px;border-radius:40px;color:#fff;text-decoration:none;font-size:14px;transition:all 0.2s;}
+.btn:hover{background:#222;border-color:#444;}
+.btn-primary{background:#00ff88;border-color:#00ff88;color:#000;}
+.btn-primary:hover{background:#00cc6e;}
+.copy-code{background:#0d0d0d;border:0.5px solid #222;border-radius:12px;padding:12px;font-family:monospace;font-size:13px;color:#00ff88;margin:12px 0;display:flex;justify-content:space-between;align-items:center;}
+.copy-code span{color:#888;font-family:sans-serif;font-size:12px;cursor:pointer;}
+.copy-code span:hover{color:#00ff88;}
+hr{border:0;height:0.5px;background:#222;margin:32px 0;}
+.text-center{text-align:center;}
+.text-small{font-size:12px;color:#555;}
+.neon-green{color:#00ff88;}
+.warning{background:#1a0a0a;border-color:#ff0040;}
+.neon-red{color:#ff0040;}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- header -->
+<div class="text-center" style="margin-bottom:48px;">
+<div class="badge" style="margin-bottom:16px;">BETA v4.7.1</div>
+<h1 style="margin-bottom:8px;">TGReporter</h1>
+<p style="color:#666;">Система массового репортинга Telegram</p>
+</div>
+
+<!-- stats -->
+<div class="stat-grid">
+<div class="stat-item"><div class="stat-value">500+</div><div class="stat-label">сессий</div></div>
+<div class="stat-item"><div class="stat-value">94%</div><div class="stat-label">успех</div></div>
+<div class="stat-item"><div class="stat-value">14</div><div class="stat-label">тестеров</div></div>
+</div>
+
+<!-- what -->
+<div class="card">
+<h2>01 / Что это</h2>
+<p style="color:#aaa;">Бета-тест инфраструктуры масс-репортинга. <span class="neon-green">500+ валидных сессий</span> для блокировки каналов и аккаунтов.</p>
+</div>
+
+<!-- roles -->
+<div class="card">
+<h2>02 / Для тестеров</h2>
+<div style="margin-top:8px;">
+<ul style="color:#888;font-size:14px;list-style:none;">
+<li>— Полный доступ к панели управления</li>
+<li>— Создание масс-репортов в 1 клик</li>
+<li>— Статистика по каждому флагу</li>
+<li>— Приоритетная поддержка 24/7</li>
+<li>— Детальные гайды по обходу flood-wait</li>
+</ul>
+</div>
+</div>
+
+<!-- how to -->
+<div class="card">
+<h2>03 / Получение доступа</h2>
+<p style="color:#aaa;margin-bottom:12px;">Напишите @the_dego с текстом:</p>
+<div class="copy-code">
+<code>"Хочу участвовать в бета-тесте TGReporter. Нужна роль тестера."</code>
+<span onclick="navigator.clipboard.writeText('Хочу участвовать в бета-тесте TGReporter. Нужна роль тестера.')">[копировать]</span>
+</div>
+<p style="color:#888;font-size:14px;">После проверки → доступ к клиенту и мануалу.</p>
+</div>
+
+<!-- warning -->
+<div class="card warning">
+<h2 class="neon-red" style="text-transform:none;">⚠️ Ограничения</h2>
+<div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:8px;">
+<span>📅 до 01.07.2026</span>
+<span>👥 только 50 тестеров</span>
+<span>🔥 финальный набор</span>
+</div>
+</div>
+
+<!-- cta -->
+<div class="text-center" style="margin:32px 0;">
+<a href="https://t.me/the_dego" class="btn btn-primary" target="_blank">
+📨 @the_dego
+</a>
+</div>
+
+<hr>
+
+<div class="text-center text-small">
+TGReporter v4.7.1 · Beta Access · @the_dego
+</div>
+
+</div>
+
+<script>
+let reports = 1243;
+const statBlocked = document.querySelector('.stat-item:first-child .stat-value');
+if(statBlocked){
+    setInterval(() => {
+        reports += Math.floor(Math.random() * 5) + 1;
+        statBlocked.innerText = reports + '+';
+    }, 4000);
+}
+</script>
+
+</body>
+</html>
